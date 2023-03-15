@@ -5,6 +5,12 @@ FROM ubuntu:20.04
 ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# ロケールの設定
+RUN apt-get update \
+    && apt-get install -y locales \
+    && locale-gen ja_JP.UTF-8 \
+    && echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc
+
 # 必要なパッケージのインストール
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
