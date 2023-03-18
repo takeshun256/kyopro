@@ -3,8 +3,6 @@ version: '3.8'
 services:
   cpp_env:
     build: .
-    image: cpp_competitive_env
-    container_name: cpp_container
     volumes:
       - .:/workspace
     stdin_open: true
