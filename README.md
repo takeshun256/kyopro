@@ -22,9 +22,12 @@ make clean
 
 ### cppファイルのコンパイル、実行ファイルの実行と実行ファイル削除
 ```bash
-cpp <cppファイル>
+crun <cppファイル>
 
 e.g.
-cpp A.cpp
+crun A.cpp
 ```
 
+
+## 参考
+- crunエイリアス：https://qiita.com/yuya296/items/39dcf6df573cb7851307
