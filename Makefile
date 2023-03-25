@@ -4,3 +4,6 @@
 start:
 	docker-compose up -d --build
 	docker-compose exec cpp_env bash
+
+clean:
+	docker-compose down

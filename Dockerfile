@@ -29,6 +29,8 @@ RUN apt-get update && \
     g++-9 \
     && rm -rf /var/lib/apt/lists/*
 
+# エイリアスの設定
+RUN echo 'function crun() { command g++ -std=c++17 $@ && ./a.out && rm -f a.out; }' >> /root/.bashrc
+
 # ワーキングディレクトリの設定
 WORKDIR /workspace
-
