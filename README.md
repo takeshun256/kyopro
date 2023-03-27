@@ -30,4 +30,6 @@ crun A.cpp
 
 
 ## 参考
-- crunエイリアス：https://qiita.com/yuya296/items/39dcf6df573cb7851307
+- [crunエイリアス](https://qiita.com/yuya296/items/39dcf6df573cb7851307)
+- [atcoder-cli](https://github.com/Tatamo/atcoder-cli)
+- [online-judge-tools](https://github.com/online-judge-tools/oj)
