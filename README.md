@@ -2,18 +2,32 @@
 競技プログラミングの勉強用レポジトリ
 
 ## setup
+
+### クローン
 ```bash
-docker build -t cpp_competitive_env . # イメージをビルド
-docker-compose up -d # コンテナを作成
-docker-compose exec cpp_env bash # コンテナに入る
+git clone https://github.com/takeshun256/kyopro.git
+cd kyopro
 ```
-コンテナを抜ける
+
+### Docker環境をスタート
 ```bash
-exit
+make start
 ```
-コンテナの停止と削除
+
+### Docker環境を抜けて、コンテナを削除
 ```bash
-docker-compose down
+~$exit
+make clean
+```
+
+### cppファイルのコンパイル、実行ファイルの実行と実行ファイル削除
+```bash
+crun <cppファイル>
+
+e.g.
+crun A.cpp
 ```
 
 
+## 参考
+- crunエイリアス：https://qiita.com/yuya296/items/39dcf6df573cb7851307
