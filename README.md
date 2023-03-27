@@ -10,13 +10,31 @@ cd kyopro
 ```
 
 ### Docker環境をスタート
+
+- ビルド、コンテナ起動とAtcoderのログインを全て行う
 ```bash
 make start
 ```
 
-### Docker環境を抜けて、コンテナを削除
+- それぞれ行う
 ```bash
-~$exit
+make build
+make run
+~# make login
+```
+
+### 新しいコンペのためのディレクトリを作成
+- 新規作成するコンペの名称を聞かれるので入力
+- e.g. https://atcoder.jp/contests/abc295 -> abc295がコンペの名称
+
+```bash
+make start_new_comp.sh
+```
+
+
+### 環境を抜けて、コンテナを削除
+```bash
+~# exit
 make clean
 ```
 
