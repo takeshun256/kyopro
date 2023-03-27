@@ -12,8 +12,7 @@ RUN apt-get update \
     && echo "export LANG=ja_JP.UTF-8" >> /etc/bash.bashrc
 
 # 必要なパッケージのインストール
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
     build-essential \
     g++ \
     gdb \
@@ -21,16 +20,17 @@ RUN apt-get update && \
     curl \
     wget \
     vim \
+    npm \
+    python3-pip \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# C++のバージョンを指定
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    g++-9 \
-    && rm -rf /var/lib/apt/lists/*
-
-# エイリアスの設定
-RUN echo 'function crun() { command g++ -std=c++17 $@ && ./a.out && rm -f a.out; }' >> /root/.bashrc
+# setup.shの実行
+COPY setup_oj.sh /root
+COPY template /root
+RUN chmod +x /root/setup_oj.sh
+RUN /root/setup_oj.sh
 
 # ワーキングディレクトリの設定
 WORKDIR /workspace
+
