@@ -6,5 +6,4 @@ int main() {
     cin >> N;
 
     cout << ans << endl;
-    return 0;
 }
